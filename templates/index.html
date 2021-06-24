@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生信息列表</title>
+	
+ <style type="text/css">
+			/*表格样式*/			
+			table {
+				width: 95%;
+				background: #aaa;
+				margin: 10px auto;
+				border-collapse: collapse;/*border-collapse:collapse合并内外边距(去除表格单元格默认的2个像素内外边距*/	
+			}				
+			th,td {
+				height: 25px;
+				line-height: 25px;
+				text-align: center;
+				border: 1px solid #ccc;
+			}		
+			th {
+				background: #eee;
+				font-weight: normal;
+			}		
+			tr {
+				background: #fff;
+			}		
+			tr:hover {
+				background: #cc0;
+			}		
+			td a {
+				color: #06f;
+				text-decoration: none;
+			}		
+			td a:hover {
+				color: #06f;
+				text-decoration: underline;
+			}
+			
+		button {  
+        width: 100px;  
+        padding:3px;  
+        background-color: #3d83fa;  
+        border-color:#fefefe;  
+        color: #fff;  
+        -moz-border-radius: 10px;  
+        -webkit-border-radius: 10px;  
+        border-radius: 10px; /* future proofing */  
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */  
+        text-align: center;  
+        vertical-align: middle;  
+        border: 1px solid transparent;  
+        font-weight: 900;  
+        font-size:100%  
+      }  
+
+
+		</style>
+
+
+	
+</head>
+<button><a href="/add/" style="color:white;Font-size:10">添加学生</a></button>
+<body>
+<div align="center">
+<h1>学生信息列表</h1>
+<table border="1">
+    <thead>
+        <tr>
+			<td>序号</td>
+            <td>学号</td>
+            <td>姓名</th>
+			<td colspan="3" >操作</td>
+        </tr>
+		
+    </thead>
+
+	<div align="center">
+	<tbody>
+		{% for list in lists %}
+		<tr>
+			<td>{{ forloop.counter }}</td>
+			<td>{{ list.0 }}</td>
+			<td>{{ list.1 }}</td>
+			<td><a href="/del/{{ list.0 }}/">删除</a></td>
+			<td><a href="/edit/{{ list.0 }}/">修改</a></td>
+			
+		</tr>
+		{% endfor %}
+	</tbody>
+	</div>
+	</table>
+</body>
+</html>

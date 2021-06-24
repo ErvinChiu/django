@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>新增学生信息</title>
+ <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css"> 
+ <style>
+        input{
+
+            font-size:18px;
+             /* 设置输入框中字体的大小 */
+
+            height:35px; 
+            /* 设置输入框的高度 */
+
+            border-radius:4px; 
+            /* 设置输入框的圆角的大小 */
+
+            border:1px solid #c8cccf;
+            /* 设置输入框边框的粗细和颜色 */
+
+            color:#986655; 
+            /* 设置输入框中文字的颜色 */
+
+            outline:0; 
+            /* 将输入框点击的时候出现的边框去掉 */
+
+            text-align:middle; 
+            /* 设置输入框中文字的位置 */
+
+            padding-left: 20px;
+
+            display:block; 
+            /* 将输入框设置为块级元素 */
+
+            cursor: pointer;
+
+             box-shadow: 2px 2px 5px 1px #ccc;  
+
+            }
+
+         input::-webkit-input-placeholder{
+             color: #986655;
+             font-size: 12px;
+         }
+		button {  
+        width: 150px;  
+        padding:8px;  
+        background-color: #428bca;  
+        border-color: #357ebd;  
+        color: #fff;  
+        -moz-border-radius: 10px;  
+        -webkit-border-radius: 10px;  
+        border-radius: 10px; /* future proofing */  
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */  
+        text-align: center;  
+        vertical-align: middle;  
+        border: 1px solid transparent;  
+        font-weight: 900;  
+        font-size:100%  
+      }  
+
+  </style>
+</head>
+<body>
+<div align="center">
+<h1>新增学生信息</h1>
+<form action="" method="post">
+ <p>
+ 学号：<input type="text" name="sid" placeholder="请输入10位数字"> 
+ 姓名：<input type="text" name="sname" placeholder="请输入姓名"> <span>{{ error }}</span>
+ </p>
+ <p>
+ {% csrf_token %}
+ <button>提交</button>
+ 
+
+ </p>
+</form>
+</body>
+</html>
